@@ -2,11 +2,11 @@
 import math
 import matplotlib.pyplot as plt
 
-
 #Variables y listas
 lista_de_coordenadas = []
 lista_de_coordenadas_x= []
 lista_de_coordenadas_y=[]
+Dist_T=0
  # Radio de la Tierra en kilómetros
 R = 6371.0
 
@@ -55,25 +55,26 @@ def distancia_Haversine (x1,y1,x2,y2):
     tDistance = R *intermediate2
     return tDistance
 
+#Calcular la distancia de las coordenadas en la lista
+for i in range (len(lista_de_coordenadas_x)-1):
+    Dist_T=Dist_T + distancia_Haversine(lista_de_coordenadas_x[i],lista_de_coordenadas_y[i],lista_de_coordenadas_x[i+1],lista_de_coordenadas_y[i+1])
 
-# Create a new plot
+print (Dist_T)
+
+# Crear la grafica de la trayectoria
 plt.plot(lista_de_coordenadas_x, lista_de_coordenadas_y)
 
-# Set the title and labels
+# Nombre de la grafica y de los ejes
 plt.title('Line Plot Example')
-plt.xlabel('X')
-plt.ylabel('Y')
+plt.xlabel('Longitud')
+plt.ylabel('Latitud')
 
 # Show the plot
 plt.show() 
 
-print (lista_de_coordenadas_x[1])
-print(lista_de_coordenadas_y[1])
-print(lista_de_coordenadas_x[2])
-print(lista_de_coordenadas_y[2])
-print(distancia_Haversine(lista_de_coordenadas_x[1],lista_de_coordenadas_y[1],lista_de_coordenadas_x[2],lista_de_coordenadas_y[2]))
 
-#for i in range (len(lista_de_coordenadas_x)):
+
+
 
 
 
