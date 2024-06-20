@@ -1,4 +1,4 @@
-# Total Distance Calculation
+# Distance Calculation Program
 
 ## Project Description
 This Python project reads a text file containing geographic coordinates (latitude and longitude), calculates the total distance traveled between these coordinates using the Haversine formula, and generates a plot of the trajectory.
